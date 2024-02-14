@@ -2,7 +2,7 @@
  * Navjot Kamboj- 40240781 and Yatish Chutani -40266553
  * COMP 6481 (Programming and Problem Solving)
  * Assignment #1 (Part-II)
- * Due Date: 11th Feb, 2024
+ * Due Date: 14th Feb, 2024
  *
  */
 public class BattleShip {
@@ -16,7 +16,7 @@ public class BattleShip {
 
     /**
      * Default constructor of BattleShip Class
-     * Initializes default values to the variables declared above and
+     * Initializes default values to the private attributes declared above and
      * Creates the default board array with '_'
      */
     BattleShip(){
