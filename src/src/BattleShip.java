@@ -114,7 +114,7 @@ public class BattleShip {
             System.out.print("\nGood game, I win let's play again!\n");
             return false;
         } else if(computerShips == 0){
-            System.out.print("\nGood game, I lost let's play again!\n");
+            System.out.print("\nYou Win!\n");
             return false;
         } else {
             return true;
@@ -169,7 +169,7 @@ public class BattleShip {
      * This method is uses random computer target coordinates using the random function
      * and prints it with the appropriate notation
      *
-     * Passes coordinates into updateBoard
+     * Pass coordinates into updateBoard
      */
     public void computerMove(){
         int a = (int) (Math.random() * 7) + 65;
