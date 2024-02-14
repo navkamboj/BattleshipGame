@@ -2,9 +2,9 @@ import java.util.Scanner;
 
 /**
  * Navjot Kamboj- 40240781 and Yatish Chutani -40266553
- * COMP 6481 (Programming and Problem Solving)
+ * COMP 6481 (Programming and Problem-Solving)
  * Assignment #1 (Part-II)
- * Due Date: 11th Feb, 2024
+ * Due Date: 14th Feb, 2024
  *
  */
 
@@ -17,7 +17,7 @@ public class Main {
 
         BattleShip b = new BattleShip();
         Scanner sc = new Scanner(System.in);
-        System.out.println("Hi, let's play Battleship! ");
+        System.out.println("Hi, let's play Battleship! \n");
 
         /* Take user's input to enter the coordinates where they want to place their ships
         & use isCoordinateValid method to verify if user is entering correct and unused coordinates
@@ -49,10 +49,21 @@ public class Main {
         b.setComputerShipsAndGrenades();
         System.out.println("OK, the computer placed its ships and grenades at random. Let’s play.");
 
-
-
-
-
-
+        while (b.isRunning()) {
+            if (b.gameTurn()){
+                System.out.print("position of your rocket: ");
+                String upperCoord = sc.next().toUpperCase();
+                while (((int) upperCoord.charAt(0)) < 65 || ((int) upperCoord.charAt(0)) > 72 || Character.getNumericValue(upperCoord.charAt(1)) > 8 || Character.getNumericValue(upperCoord.charAt(1)) < 1) {
+                    System.out.print("Position out of range, choose another position of your rocket: ");
+                    upperCoord = sc.next().toUpperCase();
+                }
+                b.humanUserMove(upperCoord);
+            } else if (!b.gameTurn()){
+                System.out.print("position of my rocket: ");
+                b.computerMove();
+            }
+        }
+        System.out.println("\nPlayer lost : " + b.getHumanUserTurnLoss() + " turn(s) to grenades");
+        System.out.println("I lost: " + b.getComputerTurnLoss() + " turn(s) to grenades");
     }
 }
